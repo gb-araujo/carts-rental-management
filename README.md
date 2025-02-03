@@ -1,5 +1,5 @@
 
-# 🛒 Controle de Aluguel de Carrinhos
+# 🛒 Controle de Aluguel de Carts
 
 Este projeto foi criado para um evento com o objetivo de gerenciar o processo de aluguel de carrinhos. Ele oferece funcionalidades para registrar, acompanhar em tempo real e finalizar aluguéis de maneira prática e organizada, garantindo uma gestão eficiente.
 
