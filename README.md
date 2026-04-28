@@ -1,73 +1,80 @@
+# Carts Rental Management
 
-# 🛒 Controle de Aluguel de Carts
+Sistema web para controle de aluguel de carrinhos em eventos. A aplicacao permite cadastrar operadores, registrar clientes, acompanhar tempo de uso em tempo real e identificar alugueis que passaram do limite configurado.
 
-Este projeto foi criado para um evento com o objetivo de gerenciar o processo de aluguel de carrinhos. Ele oferece funcionalidades para registrar, acompanhar em tempo real e finalizar aluguéis de maneira prática e organizada, garantindo uma gestão eficiente.
+## Funcionalidades
 
----
+- Login com Firebase Authentication.
+- Cadastro de operadores.
+- Cadastro de clientes com nome, CPF e tempo maximo de uso.
+- Listagem em tempo real dos clientes em atendimento.
+- Calculo de tempo passado desde o inicio do aluguel.
+- Previsao de horario final.
+- Indicacao visual de tempo excedido.
+- Exclusao de registros finalizados.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias
 
-- **Back-end:** Firebase (serverless)  
-- **Banco de Dados:** NoSQL - Firestore Database  
-- **Front-end:** ReactJS  
-- **Controle de Versão:** Git e GitHub  
+- React 18
+- React Router DOM
+- Firebase Authentication
+- Cloud Firestore
+- React Firebase Hooks
+- Bootstrap
+- Styled Components
 
----
+## Requisitos
 
-## 🚀 Como Rodar o Projeto
+- Node.js 18 ou superior
+- NPM
+- Projeto Firebase com Authentication e Firestore habilitados
 
-Siga os passos abaixo para configurar e executar o projeto localmente:
+## Configuracao
 
-### 1. Clone o repositório
+Configure o Firebase em `src/firebaseConfig.js` com os dados do seu projeto. No console do Firebase, habilite:
 
-```bash
-git clone https://github.com/seu-usuario/controle-aluguel-carrinhos.git
-```
+- Authentication por email/senha.
+- Cloud Firestore.
+- Regras de acesso adequadas ao ambiente de uso.
 
-### 2. Configure o Firebase
-
-- No arquivo de configuração (`firebaseConfig.js` ou similar), substitua os valores pelas credenciais do seu projeto Firebase.  
-  Você pode encontrar essas informações no console do Firebase, na seção *Configurações do Projeto*.
-
-```javascript
-const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_AUTH_DOMAIN",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_STORAGE_BUCKET",
-  messagingSenderId: "SEU_MESSAGING_SENDER_ID",
-  appId: "SEU_APP_ID"
-};
-
-export default firebaseConfig;
-```
-
-### 3. Instale as dependências
-
-Execute o comando abaixo para instalar todas as dependências do projeto:
+## Rodando localmente
 
 ```bash
+git clone https://github.com/gb-araujo/carts-rental-management.git
+cd carts-rental-management
 npm install
-```
-
-### 4. Inicie o projeto
-
-Inicie o servidor de desenvolvimento com o comando:
-
-```bash
 npm start
 ```
 
-O projeto será executado em `http://localhost:3000`.
+A aplicacao roda em `http://localhost:3000`.
 
----
+## Estrutura principal
 
-## 📌 Observação
+```text
+src/
+  App.js                         # Rotas protegidas por autenticacao
+  firebaseConfig.js              # Configuracao Firebase
+  components/
+    Login.js                     # Login do operador
+    ControleAluguel.js           # Fluxo principal de aluguel
+    OperadorForm.js              # Cadastro de operador
+```
 
-- Certifique-se de que o Firebase está devidamente configurado antes de rodar o projeto.
-- Para utilizar todas as funcionalidades, habilite o Firestore Database no console do Firebase.
+## Scripts
 
----
+| Comando | Descricao |
+| --- | --- |
+| `npm start` | Inicia o ambiente de desenvolvimento |
+| `npm test` | Executa testes do Create React App |
+| `npm run build` | Gera build de producao |
 
 ## Imagem da plataforma
-![Plataforma](/plataforma.jpeg)
+
+![Plataforma](./plataforma.jpeg)
+
+## Melhorias futuras
+
+- Criar niveis de permissao para operadores e administradores.
+- Adicionar relatorios por evento/data.
+- Implementar filtros e busca na lista de clientes.
+- Adicionar testes para calculo de tempo e rotas protegidas.
